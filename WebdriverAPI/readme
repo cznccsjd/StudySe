@@ -1,0 +1,7 @@
+文件对应关系：
+
+16、alert、confirm、prompt的处理          alert.py
+17、对话框处理,js处理    dialog.py
+18、调用js     js.py       -->跟js相关的，不懂
+19、控制浏览器滚动条     controlScrollball.py
+20、cookie处理     cookie.py

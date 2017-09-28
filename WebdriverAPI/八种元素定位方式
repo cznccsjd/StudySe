@@ -1,0 +1,59 @@
+WebDriver提供八种元素定位方法：
+1、id;
+    HTML规定id属性在HTML文档中必须是唯一的；
+    find_element_by_id("kw")
+2、name;
+    HTML规定name来指定元素的名称；因此它的作用更像人类的姓名；
+    name属性值在当前页面中可以不唯一；
+    find_element_by_name("wd")
+3、class name;
+    HTML规定class来指定元素的类名；
+    find_element_by_class_name("s_ipt")
+4、tag name;
+    HTML本质是通过tag来定义实现不同的功能，每一个元素本质上也是一个tag；（<div>、<input>、<a>等均为tag）
+    因为一个tag往往用来定义一类功能，所以通过tag识别某个元素的概率很低；很难通过标tag name去区分不同的元素；
+    find_element_by_tag_name("input")
+5、link text;
+    专门用来定位文本链接；（定位元素标签对之间的文本信息）
+    find_element_by_link_text("新闻")
+6、partial link text;
+    partial link text定位是对link定位的一种补充，有些文本链接会比较长，这个时候我们可以去文本链接的一部分定位，只要这一部分信息可以唯一的标识这个链接；
+    find_element_by_partial_link_text("这是一个很长的")
+7、xpath;
+    7.1 绝对路径：一层层往下写；
+    7.2 相对路径：
+        7.2.1 利用元素属性定位：属性值（id/name/class），eg：
+            find_element_by_xpath("//input[@id='kw']")
+                //表示当前页面某个目录下；
+                input表示定位元素的标签名；如果不想指定标签名，也可以用星号(*)代替；
+                [@id='kw']表示这个元素的id属性值等于kw；
+        7.2.2 层级与属性结合：
+           如果一个元素本身没有可以唯一标识这个元素的属性值，那么我们可以找到其上一级元素，如果它的上一级有可以唯一标识属性的值，也可以拿来使用；
+           find_element_by_xpath("//span[@class='bg s_ipt_wr']/input")
+        7.2.3 使用逻辑运算符：
+            如果一个元素不能唯一的区分一个元素，我们还可以使用逻辑运算符连接多个属性来查找元素；
+            find_element_by_xpath("//input[@id='kw' and @class='su']/span/input")
+8、css selector;（css不会，后续有时间再学习）
+
+页面源代码：
+1、由标签对组成，eg：
+    <html></html>
+    <body></body>
+    <div></div>
+    <form></form>
+2、标签有各种属性，eg：
+    <div id="head" class="s_down">
+    <from class="well">
+    <input id="kw" name="wd" class="s_ipt">
+3、标签对直接可以有文本数据，eg：
+    <a>新闻</a>
+4、标签有层级关系，eg：
+    <html>
+        <body>
+        </body>
+    </html>
+    <div>
+        <form>
+            <input />
+        </form>
+    </div>
