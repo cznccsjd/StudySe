@@ -31,7 +31,7 @@ class WidgetTestCase(unittest.TestCase):
     def testResize(self):
         self.widget.resize(100,100)
         self.assertEqual(self.widget.getSize(),(100,100))
-        print "this si testcase 'testResize'"
+        print "this is testcase 'testResize'"
 
 #测试
 if __name__ == "__main__":
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     suite.addTest(WidgetTestCase("testResize"))
 
     #执行测试
-    runner = unittest.TextTestResult()
+    runner = unittest.TextTestRunner()
     runner.run(suite)
 
 

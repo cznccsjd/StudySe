@@ -26,7 +26,7 @@ class Baidu(unittest.TestCase):
             driver.find_element_by_id("kwddd").send_keys("selenium webdriver")
         except:
             #如果没有找到上面的元素就截取当前页面
-            driver.get_screenshot_as_file("D:\Documents\workspace\studySE\Error_pics\err1808311542001.png")
+            driver.get_screenshot_as_file("D:\Documents\workspace\studySE\Error_pics\err1808311542002.png")
 
         driver.find_element_by_id("su").click()
         time.sleep(2)

@@ -52,14 +52,14 @@ if __name__ == "__main__":
     unittest.main()
 
 '''
-虽然已经实例了多个用例一起跑，但这样仍然不合理，几个用力一起执行还好，如果几十个，几百个
+虽然已经实例了多个用例一起跑，但这样仍然不合理，几个用例一起执行还好，如果几十个，几百个
 用例的话，这个文件将会变得无比庞大，不利于维护。
-所以合理的作坊式一个用例一个文件，把所有文件放到一个文件夹下，通过单独的脚本控制所有用例的执行，
+所以合理的做法是一个用例一个文件，把所有文件放到一个文件夹下，通过单独的脚本控制所有用例的执行，
 将脚本的执行结果输出到一个log文件中。
 eg：
 import os
 #列出某个文件夹下所有的case，这里用的是Python，所在py文件运行一次后会生成一个pyc的副本
-caselist = os.listdir(' D:\\selenium_use_case\\test_case)       #filepath = D:\\selenium_use_case\\test_case
+caselist = os.listdir(' D:\\selenium_use_case\\test_case')       #filepath = D:\\selenium_use_case\\test_case
 for a in caselist:
     s = a.split('.')[1:][0] #选取索要执行的用例
     if s == 'py'
