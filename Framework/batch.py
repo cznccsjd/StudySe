@@ -15,6 +15,7 @@ class Baidu(unittest.TestCase):
         self.base_url = "http://www.baidu.com"
         self.verificationErrors = []
         self.accept_next_alert = True
+        print "this is setup"
 
     #百度搜索用例
     def test_baidu_search(self):
@@ -26,6 +27,7 @@ class Baidu(unittest.TestCase):
         driver.find_element_by_id("su").click()
         time.sleep(2)
         driver.close()
+        print "this is test_baidu_search"
 
     #百度设置用例
     def test_baidu_set(self):
@@ -43,10 +45,12 @@ class Baidu(unittest.TestCase):
         driver.find_element_by_xpath("//input[@value='保存设置']").click()
         time.sleep(2)
         driver.switch_to_alert().accept()
+        print "this is test_baidu_set"
 
     def tearDown(self):
         self.driver.quit()
         self.assertEqual([],self.verificationErrors)
+        print "this is teardown"
 
 if __name__ == "__main__":
     unittest.main()

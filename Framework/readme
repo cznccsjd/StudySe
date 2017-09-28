@@ -4,3 +4,4 @@
     运行测试集   runtestsuite.py
 24 批量执行测试集  batch.py
 25 异常捕捉与错误截图    exception.py
+26 生成测试报告（HTMLTestRunner）htmlReport.py
