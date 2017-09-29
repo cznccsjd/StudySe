@@ -34,4 +34,4 @@ class WidgetTestCase(unittest.TestCase):
         print "this is tearDown"
 
 if __name__ == '__main__':
-    print "这个if有问题，就别执行了，光看代码吧，而且忽略print吧"
+    unittest.main()
