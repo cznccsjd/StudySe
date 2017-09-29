@@ -41,7 +41,7 @@ if __name__ == "__main__":
     testUnit.addTest(Baidu("test_baidu_Three"))
 
     #定义保存存放路径，支持相对路径
-    filename = r'D:\Documents\workspace\studySE\Report\result170928185201.html'
+    filename = r'D:\Documents\workspace\studySE\Report\result170928185201.html' #其他电脑运行时，注意修改路径
     fp = open(filename,'wb')
     runner = HTMLTestRunner.HTMLTestRunner(stream = fp, title = 'Report_title_170928185201',description = 'Report_description for myself')
     #自动进行测试

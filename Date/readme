@@ -1,0 +1,6 @@
+文件对应关系：
+
+27 数据驱动测试
+    读取文件参数化 baidu_read_date.py  （从txt文件中读取）
+    用户名密码的参数化（读取文件） baidu_login_txt.py（从txt文件中读取）
+    用户名密码的参数化（字典） baidu_login_dic.py    （包含文件fun.py）
