@@ -7,4 +7,4 @@
 26 生成测试报告（HTMLTestRunner）htmlReport.py
 
 28、测试套件 testSuite.py    (test_youdao.py、test_baidu.py)
-29、结构改进 
+29、结构改进 all_test.py
