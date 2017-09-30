@@ -6,4 +6,5 @@
 25 异常捕捉与错误截图    exception.py
 26 生成测试报告（HTMLTestRunner）htmlReport.py
 
-28、测试套件 testSuite.py
+28、测试套件 testSuite.py    (test_youdao.py、test_baidu.py)
+29、结构改进 
