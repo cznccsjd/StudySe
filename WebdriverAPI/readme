@@ -1,5 +1,8 @@
 文件对应关系：
-
+11、定位一组元素   controlElements.py
+12、多层框架和窗口定位(Frame和window)  frame.py
+13、层级定位（包括获取多层级） cengjidingwei.py
+15、下拉框处理 xialakuang.py
 16、alert、confirm、prompt的处理          alert.py
 17、对话框处理,js处理    dialog.py
 18、调用js     js.py       -->跟js相关的，不懂
