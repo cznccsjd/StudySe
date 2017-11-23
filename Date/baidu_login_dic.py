@@ -25,7 +25,7 @@ def readDic():
         driver.quit()
 
 def readFun():
-    k, v = fun.user()   #通过调用函数获得用户名&密码
+    k, v = fun.user()   #通过调用函数获得用户名&密码，fun.user()已经定义了k和v
     print k,v
 
     driver = webdriver.Firefox()
@@ -39,7 +39,13 @@ def readFun():
     time.sleep(3)
     driver.quit()
 
+#测试一下.item()的用法：
+def test():
+    k, v = fun.dic().items()
+    print "k的数值是：", k
+    print "v的数值是：", v
 
 if __name__ == '__main__':
     #readDic()
-    readFun()
+    #readFun()
+    test()

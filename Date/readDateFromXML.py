@@ -4,16 +4,16 @@
 学习资料链接：http://www.cnblogs.com/fnng/p/3581433.html#undefined
 '''
 
-from xml.dom import minidom     #从xml/dom文件夹下导入minidom.py文件
+from xml.dom import minidom     #从xml/dom文件夹下导入minidom.py文件,用来处理XML文件
 
 ###########获取标签属性
 def dateOne():
     #打开xml文档
     #dom = minidom.parse('D:\Documents\workspace\studySE\Date\dateONE.xml')
-    dom = minidom.parse('dateONE.xml')
+    dom = minidom.parse('dateONE.xml')      #parse()用于打开一个XML文件
 
     #得到文档元素对象
-    root = dom.documentElemen   #得到dom文档对象元素，并把获得的对象给root
+    root = dom.documentElement   #得到dom文档对象元素，并把获得的对象给root  得到xml文件的唯一根元素
     print root.nodeName
     print root.nodeValue
     print root.nodeType
@@ -103,7 +103,7 @@ def dateFive():
 
 if __name__ == '__main__':
     #dateOne()
-    #dateTwo()
+    dateTwo()
     #dateThree()
     #dateFour()
-    dateFive()
+    #dateFive()
