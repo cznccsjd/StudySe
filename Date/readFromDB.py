@@ -1,9 +1,9 @@
 #coding:utf-8
 """
-从DB中读取数据、写入数据
+从DB中读取数据、写入数据   （需要下载安装MySQLdb模块）
 
 connect对象方法：
-close()：关闭数据库连接,注意一旦执行了close()方法，再试图十三幺连接对象的方法将会导致异常；
+close()：关闭数据库连接,注意一旦执行了close()方法，再试图连接对象的方法将会导致异常；
 commit():提交当前事务
 rollback():取消当前事务
 cursor():使用这个连接创建并返回一个游标或类游标的对象
@@ -20,10 +20,11 @@ def testOne():
     注意：删除的数据库一定要是不存在的，小心玩火自焚！！！！
     :return: 
     """
-    #conTalk = MySQLdb.Connection(host='172.16.0.20',user='root',passwd='123456',port=3306,charset='utf8')
+    conTalk = MySQLdb.Connection(host='172.16.0.20',user='root',passwd='123456',port=3306,charset='utf8')
     conPrivate = MySQLdb.connect(host='172.16.0.118',user='root',passwd='123456',port=3306,charset='utf8')
-    #print conPrivate, conTalk
-    conPrivate.query('DROP DATABASE testONE')
+    print conPrivate, conTalk
+    print "上面两种方法都可以使用"
+    #conPrivate.query('DROP DATABASE testONE')
 
 def testTwo():
     """
@@ -32,8 +33,8 @@ def testTwo():
     6、更新；7、删除
     :return: 
     """
-    cxn = MySQLdb.connect(host='172.16.0.118',user='root',passwd='123456',port=3306,charset='utf8',db='testjlz')
-    cur = cxn.cursor()
+    conn = MySQLdb.connect(host='172.16.0.118',user='root',passwd='123456',port=3306,charset='utf8',db='testjlz')
+    cur = conn.cursor()
     #print cur
     #cur.execute('CREATE DATABASE testjlz')     #新建数据库testjlz,注意connect参数需要删除参数（不能添加）db='testjlz'
     #cur.execute('CREATE TABLE student(name varchar(10),age int(4), sex varchar(8))')       #在testjlz库中，新建表student,注意connect参数需要添加db='testjlz'
@@ -42,7 +43,7 @@ def testTwo():
     cur.execute("INSERT INTO student values('hanmeimei', 25, 'woman')")
     cur.execute("SELECT * FROM student where age >= 20")
 
-    for date in cur.fetchall():
+    for date in cur.fetchall(): #cur.fetchall() 获取所有的记录
         print date
 
     #更新
@@ -50,12 +51,21 @@ def testTwo():
     #删除
     cur.execute("DELETE FROM student where name = 'zhangsanyi'")
 
+    #查询
+    result1 = cur.execute("SELECT * from student")
+    print result1
+    #获取查询的所有记录
+    result =cur.fetchall()
+    #打印查询的结果
+    print result
+
+"""
 def testThree():
-    """
+    '''
     数据库接口程序应用程序举例，p605末尾
     
     :return: 
-    """
+    '''
     COLSIZ = 10
     RDBMSs = {'s': 'sqlite', 'm':'mysql', 'g':'gadfly'}
     DB_EXC = None
@@ -124,12 +134,12 @@ def testThree():
         NAMES = (
             ('aaron',8312),
         )
-
+"""
 
 
 
 
 
 if __name__ == '__main__':
-    #testOne()
+    testOne()
     #testTwo()
