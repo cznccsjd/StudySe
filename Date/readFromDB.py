@@ -43,6 +43,12 @@ def testTwo():
     cur.execute("INSERT INTO student values('hanmeimei', 25, 'woman')")
     cur.execute("SELECT * FROM student where age >= 20")
     '''使用insert into语句，可能会出现数据库没有执行的情况，添加一句conn.commit()即可'''
+    #sql语句参数化
+    username = "zhangsan"
+    age = 21
+    sex = 'man'
+    sql = "INSERT INTO student values ('%s', '%d', '%s');" % (username, age, sex)
+    print "\n下面打印出来的就是参数化后的SQL语句：\n'%s'\n" % sql
 
     for date in cur.fetchall(): #cur.fetchall() 获取所有的记录
         print date
@@ -63,7 +69,7 @@ def testTwo():
 """
 def testThree():
     '''
-    数据库接口程序应用程序举例，p605末尾
+    数据库接口程序应用程序举例，p605末尾,后续在继续完善
     
     :return: 
     '''
@@ -142,5 +148,5 @@ def testThree():
 
 
 if __name__ == '__main__':
-    testOne()
-    #testTwo()
+    #testOne()
+    testTwo()
