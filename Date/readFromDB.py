@@ -42,6 +42,7 @@ def testTwo():
     cur.execute("INSERT INTO student values('lisi',19,'man')")
     cur.execute("INSERT INTO student values('hanmeimei', 25, 'woman')")
     cur.execute("SELECT * FROM student where age >= 20")
+    '''使用insert into语句，可能会出现数据库没有执行的情况，添加一句conn.commit()即可'''
 
     for date in cur.fetchall(): #cur.fetchall() 获取所有的记录
         print date
